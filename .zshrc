@@ -127,3 +127,10 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 alias config='/usr/bin/git --git-dir=/home/mateus/.config/ --work-tree=/home/mateus'
 alias vim='nvim'
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+# Turso
+export PATH="/home/mateus/.turso:$PATH"

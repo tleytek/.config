@@ -30,4 +30,19 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "80"
+
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+
+
+vim.diagnostic.config({
+            float = {
+                source = "always",
+                border = "rounded",
+                style = "minimal",
+                header = "",
+                prefix = "",
+            }
+        })

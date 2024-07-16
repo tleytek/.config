@@ -1,21 +1,24 @@
 return {
     'lewis6991/gitsigns.nvim',
     config = function()
-        require('gitsigns').setup({
+        require('gitsigns').setup {
             signs = {
-                add = { text = '+' },
-                change = { text = '~' },
-                delete = { text = '‾' },
-                topdelete = { text = '~' },
+                add          = { text = '+' },
+                change       = { text = '~' },
+                delete       = { text = '‾' },
+                topdelete    = { text = '~' },
+                changedelete = { text = '~' },
+                untracked    = { text = '┆' },
             },
             current_line_blame = false,
             on_attach = function(bufnr)
                 local gs = package.loaded.gitsigns
 
                 local function map(mode, l, r, opts)
-                    opts = opts or {}
-                    opts.buffer = bufnr
-                    vim.keymap.set(mode, l, r, opts)
+                    vim.keymap.set(mode, l, r, { buffer = bufnr, desc = opts })
+                    -- opts = opts or {}
+                    -- opts.buffer = bufnr
+                    -- vim.keymap.set(mode, l, r, opts)
                 end
 
                 -- Navigation
@@ -52,6 +55,6 @@ return {
                 -- Text object
                 map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
             end
-        })
+        }
     end
 }

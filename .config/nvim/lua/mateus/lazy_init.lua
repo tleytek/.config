@@ -11,6 +11,7 @@ require("lazy").setup({
     spec = {
         { "LazyVim/LazyVim" },
         { import = "mateus.lazy", },
+        { import = "mateus.lazy.lsp", },
     },
     change_detection = { notify = false },
 })
