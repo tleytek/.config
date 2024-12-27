@@ -16,7 +16,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-# export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -86,7 +86,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -110,27 +110,32 @@ plugins=(git)
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# aliases
+alias zconfig="vim ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
+alias config='/usr/bin/git --git-dir=/home/mateus/.config/ --work-tree=/home/mateus'
+alias vim='nvim'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias config='/usr/bin/git --git-dir=/home/mateus/.config/ --work-tree=/home/mateus'
-alias vim='nvim'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$HOME/go/bin:$GOROOT/bin:$PATH
 
-# Turso
-export PATH="/home/mateus/.turso:$PATH"
+# Laravel
+# export PATH=~/.config/composer/vendor/bin:$PATH
+
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/mateus/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mateus/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/mateus/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mateus/google-cloud-sdk/completion.zsh.inc'; fi
+
+# otel?
+export npmrc2=$(cat $HOME/.npmrc | grep '//npm.pkg.github.com/:')

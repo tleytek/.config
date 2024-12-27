@@ -1,5 +1,8 @@
 return {
 	"mfussenegger/nvim-lint",
+	dependencies = {
+		"rshkarin/mason-nvim-lint",
+	},
 	lazy = true,
 	event = {
 		"BufReadPre",
@@ -9,10 +12,10 @@ return {
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
-			javascript = { "eslint" },
-			typescript = { "eslint" },
-			javascriptreact = { "eslint" },
-			typescriptreact = { "eslint" },
+			javascript = { "eslint_d" },
+			typescript = { "eslint_d" },
+			javascriptreact = { "eslint_d" },
+			typescriptreact = { "eslint_d" },
 			python = { "pylint" },
 		}
 
@@ -26,7 +29,7 @@ return {
 		})
 
 		vim.keymap.set("n", "<leader>l", function()
-			lint.try_lint(nil, { ignore_errors = true })
+			lint.try_lint(nil, { ignore_errors = false })
 		end, { desc = "Trigger linting for current file" })
 	end,
 }

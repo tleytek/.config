@@ -26,6 +26,7 @@ return {
 
 		cmp.setup({
 			completion = {
+				-- autocomplete = false,
 				completeopt = "menu,menuone,preview,noselect",
 			},
 			snippet = {

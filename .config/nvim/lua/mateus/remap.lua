@@ -24,7 +24,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
@@ -36,22 +36,28 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- haha go nil
-vim.keymap.set(
-    "n",
-    "<leader>ee",
-    "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
-)
+vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end)
 
-vim.keymap.set("n", "<Up>", '', { noremap = true })
-vim.keymap.set("n", "<Down>", '', { noremap = true })
-vim.keymap.set("n", "<Left>", '', { noremap = true })
-vim.keymap.set("n", "<Right>", '', { noremap = true })
+vim.keymap.set("n", "<Up>", "", { noremap = true })
+vim.keymap.set("n", "<Down>", "", { noremap = true })
+vim.keymap.set("n", "<Left>", "", { noremap = true })
+vim.keymap.set("n", "<Right>", "", { noremap = true })
 
-vim.keymap.set("i", "<Up>", '', { noremap = true })
-vim.keymap.set("i", "<Down>", '', { noremap = true })
-vim.keymap.set("i", "<Left>", '', { noremap = true })
-vim.keymap.set("i", "<Right>", '', { noremap = true })
+vim.keymap.set("i", "<Up>", "", { noremap = true })
+vim.keymap.set("i", "<Down>", "", { noremap = true })
+vim.keymap.set("i", "<Left>", "", { noremap = true })
+vim.keymap.set("i", "<Right>", "", { noremap = true })
+
+vim.keymap.set("n", "<Home>", "", { noremap = true })
+vim.keymap.set("n", "<End>", "", { noremap = true })
+vim.keymap.set("n", "<PageUp>", "", { noremap = true })
+vim.keymap.set("n", "<PageDown>", "", { noremap = true })
+
+vim.keymap.set("i", "<Home>", "", { noremap = true })
+vim.keymap.set("i", "<End>", "", { noremap = true })
+vim.keymap.set("i", "<PageUp>", "", { noremap = true })
+vim.keymap.set("i", "<PageDown>", "", { noremap = true })

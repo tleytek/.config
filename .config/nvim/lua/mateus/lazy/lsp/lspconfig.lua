@@ -51,12 +51,12 @@ return {
 				})
 			end,
 
-			--%["emmet_ls"] = function()
-			--%	lspconfig["emmet_ls"].setup({
-			--%		capabilities = capabilities,
-			--%		filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
-			--%	})
-			--%end,
+			["html"] = function()
+				lspconfig.html.setup({
+					capabilities = capabilities,
+					filetypes = { "html", "templ" },
+				})
+			end,
 
 			["lua_ls"] = function()
 				lspconfig.lua_ls.setup({
@@ -71,19 +71,6 @@ return {
 					},
 				})
 			end,
-
-			-- ["eslint"] = function()
-			--     local lspconfig = require("lspconfig")
-			--     lspconfig.eslint.setup({
-			--         capabilities = capabilities,
-			--         on_attach = function(_client, bufnr)
-			--             vim.api.nvim_create_autocmd("BufWritePre", {
-			--                 buffer = bufnr,
-			--                 command = "EslintFixAll",
-			--             })
-			--         end
-			--     })
-			-- end,
 		})
 	end,
 }

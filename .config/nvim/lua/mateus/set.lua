@@ -1,13 +1,13 @@
 vim.opt.mouse = ""
 
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
@@ -36,13 +36,14 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
-
 vim.diagnostic.config({
-            float = {
-                source = "always",
-                border = "rounded",
-                style = "minimal",
-                header = "",
-                prefix = "",
-            }
-        })
+	float = {
+		source = "always",
+		border = "rounded",
+		style = "minimal",
+		header = "",
+		prefix = "",
+	},
+})
+
+vim.filetype.add({ extension = { templ = "templ" } })
